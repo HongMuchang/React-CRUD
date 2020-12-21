@@ -1,4 +1,4 @@
-//全てのreducerをまとめる。
+//全てのreducerをまとめる
 
 import {combineReducers} from 'redux';
 import count from './count';
