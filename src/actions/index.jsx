@@ -1,16 +1,14 @@
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
+import axios from "axios";
+export const READE_EVENTS = "READE_EVENTS";
 
-export const increment = () => {
-  return {
-    type: "INCREMENT",
-  };
-};
+const ROOT_URL = "https://udemy-utils.herokuapp.com/api/v1";
+const QUERYSTRING = "?token=token123";
 
-export const decrement = () => {
-  return {
-    type: "DECREMENT",
-  };
+export const readEvents = () => async (dispatch) => {
+  const response = await axios.get(`${ROOT_URL}/events${QUERYSTRING}`);
+
+  console.log(response);
+  dispatch({ type: "READE_EVENTS", response });
 };
 
 // Action Createrの実装
